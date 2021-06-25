@@ -1,0 +1,4 @@
+include ':pipe'
+include ':android_mediapipe'
+include ':app'
+rootProject.name = "mannequinchallenge-app"

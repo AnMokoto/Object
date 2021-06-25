@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.google.mediapipe.apps.objectdetection3d_cup" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="27" />
+
+    <!-- For using the camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Cup Objectron"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.google.mediapipe.apps.objectdetection3d.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="cameraFacingFront"
+            android:value="False" />
+        <meta-data
+            android:name="binaryGraphName"
+            android:value="object_detection_3d.binarypb" />
+        <meta-data
+            android:name="inputVideoStreamName"
+            android:value="input_video" />
+        <meta-data
+            android:name="outputVideoStreamName"
+            android:value="output_video" />
+        <meta-data
+            android:name="flipFramesVertically"
+            android:value="True" />
+        <meta-data
+            android:name="converterNumBuffers"
+            android:value="2" />
+        <meta-data
+            android:name="categoryName"
+            android:value="Coffee cup,Mug" />
+        <meta-data
+            android:name="maxNumObjects"
+            android:value="5" />
+        <meta-data
+            android:name="modelScale"
+            android:value="500, 500, 500" />
+        <meta-data
+            android:name="modelTransformation"
+            android:value="1.0,  0.0, 0.0,    0.0,                                                                    0.0,  0.0, 1.0, -0.001,                                                                    0.0, -1.0, 0.0,    0.0,                                                                    0.0,  0.0, 0.0,    1.0" />
+    </application>
+
+</manifest>
